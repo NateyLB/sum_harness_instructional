@@ -22,11 +22,13 @@ int64_t
 sum(int64_t N, uint64_t A[])
 {
    printf(" inside sum_indirect perform_sum, N=%lld \n", N);
-   int sum = 0;
-   int index = A[0];
+   uint64_t sum = 0;
+   uint64_t index = A[0];
+   uint64_t num;
    for(int i = 0; i < N; i++){
-      sum += A[index];
-      index = A[index];
+      num = A[index];
+      sum += num;
+      index = num;
    }
    return sum;
 }
